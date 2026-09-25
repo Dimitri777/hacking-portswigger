@@ -32,6 +32,10 @@ Complete solutions and exploits for all SQL Injection labs.
 17. [Visible error-based SQL injection](17-visible-error-based.md)
 18. [SQL injection with filter bypass via XML encoding](18-filter-bypass-xml.md)
 
+## Scripts
+
+- [`sql_injection_allowing_login_bypass.py`](sql_injection_allowing_login_bypass.py) — automated exploit for the login bypass lab (lab 02).
+
 ## Quick Payloads Cheatsheet
 
 | Lab | Payload |
