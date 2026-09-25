@@ -14,10 +14,13 @@ Full solutions for all 5 labs in the [Web Cache Deception](https://portswigger.n
 | 4 | Exploiting cache server normalization for web cache deception | Practitioner | [04-exploiting-cache-server-normalization-for-web-cache-deception.md](web-cache-deception/04-exploiting-cache-server-normalization-for-web-cache-deception.md) |
 | 5 | Exploiting exact-match cache rules for web cache deception | Expert | [05-exploiting-exact-match-cache-rules-for-web-cache-deception.md](web-cache-deception/05-exploiting-exact-match-cache-rules-for-web-cache-deception.md) |
 
-Each file contains:
-- Vulnerability summary
-- Detailed step-by-step solution
-- Ready-to-use exploit payloads for the exploit server
+## SQL Injection
+
+Full solutions for all 18 SQL Injection labs:
+
+See [sql-injection/README.md](sql-injection/README.md) for the complete list and cheatsheet.
+
+Key files already added; remaining detailed write-ups are being populated.
 
 ## Other
 
