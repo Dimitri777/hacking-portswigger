@@ -1,5 +1,9 @@
 # Lab: SQL injection with filter bypass via XML encoding (Practitioner)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/lab-sql-injection-with-filter-bypass-via-xml-encoding)
+
+**Description:** Bypass a WAF in the XML-based stock-check feature, retrieve the administrator's credentials, and log in.
+
 **Goal:** Bypass WAF/filter that blocks common SQL keywords by encoding the payload in XML entities or similar.
 
 ## Technique

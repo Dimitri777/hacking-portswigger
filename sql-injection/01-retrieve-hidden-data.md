@@ -1,5 +1,9 @@
 # Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data (Apprentice)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/lab-retrieve-hidden-data)
+
+**Description:** Use the vulnerable product-category filter to make unreleased products appear in the results.
+
 **Goal:** Display one or more unreleased products.
 
 **Vulnerable parameter:** `category` in product filter.

@@ -1,5 +1,9 @@
 # Lab: SQL injection attack, listing the database contents on Oracle (Practitioner)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-listing-database-contents-oracle)
+
+**Description:** Identify the credentials table on an Oracle database and use the administrator account to log in.
+
 **Goal:** Retrieve the administrator password.
 
 ## Solution Steps

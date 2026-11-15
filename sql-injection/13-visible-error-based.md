@@ -1,5 +1,9 @@
 # Lab: Visible error-based SQL injection (Practitioner)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/blind/lab-sql-injection-visible-error-based)
+
+**Description:** Use verbose database errors to reveal the administrator's password, then log in.
+
 **Goal:** Extract the administrator password using visible error messages.
 
 ## Technique

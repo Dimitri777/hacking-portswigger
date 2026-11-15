@@ -1,5 +1,9 @@
 # Lab: SQL injection UNION attack, retrieving multiple values in a single column (Practitioner)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/union-attacks/lab-retrieve-multiple-values-in-single-column)
+
+**Description:** Combine usernames and passwords into one returned column, then use the administrator credentials to log in.
+
 **Goal:** Retrieve usernames and passwords, concatenating them into a single column.
 
 ## Solution

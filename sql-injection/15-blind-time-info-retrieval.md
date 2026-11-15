@@ -1,5 +1,9 @@
 # Lab: Blind SQL injection with time delays and information retrieval (Practitioner)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/blind/lab-time-delays-info-retrieval)
+
+**Description:** Infer the administrator's password from conditional response delays and use it to log in.
+
 **Goal:** Extract the administrator password using time-based blind SQLi.
 
 ## Technique

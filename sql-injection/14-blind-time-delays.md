@@ -1,5 +1,9 @@
 # Lab: Blind SQL injection with time delays (Practitioner)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/blind/lab-time-delays)
+
+**Description:** Trigger a ten-second delay through the vulnerable tracking cookie.
+
 **Goal:** Cause a time delay to prove the injection works (usually 10 seconds).
 
 ## Technique

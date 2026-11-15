@@ -1,5 +1,9 @@
 # Lab: SQL injection attack, listing the database contents on non-Oracle databases (Practitioner)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-listing-database-contents-non-oracle)
+
+**Description:** Identify the credentials table on a non-Oracle database and use the administrator account to log in.
+
 **Goal:** Retrieve the administrator password by listing tables and columns.
 
 ## Solution Steps

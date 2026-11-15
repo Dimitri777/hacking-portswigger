@@ -1,5 +1,9 @@
 # Lab: SQL injection UNION attack, determining the number of columns returned by the query (Practitioner)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/union-attacks/lab-determine-number-of-columns)
+
+**Description:** Determine how many columns the product-filter query returns using a UNION-based test.
+
 **Goal:** Determine the number of columns returned by the query and confirm with a UNION attack.
 
 ## Solution

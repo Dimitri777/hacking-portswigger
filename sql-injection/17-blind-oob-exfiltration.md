@@ -1,5 +1,9 @@
 # Lab: Blind SQL injection with out-of-band data exfiltration (Practitioner)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/blind/lab-out-of-band-data-exfiltration)
+
+**Description:** Retrieve the administrator's password through an out-of-band interaction and use it to log in.
+
 **Goal:** Exfiltrate the administrator password via out-of-band channel (DNS/HTTP to Collaborator).
 
 ## Technique

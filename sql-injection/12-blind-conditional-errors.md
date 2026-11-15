@@ -1,5 +1,9 @@
 # Lab: Blind SQL injection with conditional errors (Practitioner)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/blind/lab-conditional-errors)
+
+**Description:** Use conditional database errors to infer the administrator's password and log in.
+
 **Goal:** Extract administrator password via error-based blind SQLi.
 
 ## Technique

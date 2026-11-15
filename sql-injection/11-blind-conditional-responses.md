@@ -1,5 +1,9 @@
 # Lab: Blind SQL injection with conditional responses (Practitioner)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/blind/lab-conditional-responses)
+
+**Description:** Infer the administrator's password from response differences and use it to log in.
+
 **Goal:** Find the password of the `administrator` user (usually 20 characters, lowercase + numbers).
 
 **Tracking cookie:** Vulnerable to injection.

@@ -1,5 +1,9 @@
 # Lab: SQL injection UNION attack, retrieving data from other tables (Practitioner)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/union-attacks/lab-retrieve-data-from-other-tables)
+
+**Description:** Retrieve usernames and passwords from another database table and use the administrator credentials to log in.
+
 **Goal:** Retrieve the usernames and passwords from the `users` table and log in as administrator.
 
 ## Solution

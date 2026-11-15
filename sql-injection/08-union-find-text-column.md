@@ -1,5 +1,9 @@
 # Lab: SQL injection UNION attack, finding a column containing text (Practitioner)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/union-attacks/lab-find-column-containing-text)
+
+**Description:** Find which result column accepts text by making the lab-provided value appear in the response.
+
 **Goal:** Find which column accepts string data and make the application display the string provided by the lab.
 
 ## Solution

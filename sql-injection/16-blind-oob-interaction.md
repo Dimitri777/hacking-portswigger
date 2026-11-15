@@ -1,5 +1,9 @@
 # Lab: Blind SQL injection with out-of-band interaction (Practitioner)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/blind/lab-out-of-band)
+
+**Description:** Cause an out-of-band DNS lookup to Burp Collaborator through the vulnerable tracking cookie.
+
 **Goal:** Trigger an out-of-band DNS/HTTP interaction (Burp Collaborator required).
 
 ## Technique

@@ -1,5 +1,9 @@
 # Lab: SQL injection vulnerability allowing login bypass (Apprentice)
 
+**PortSwigger:** [Official lab](https://portswigger.net/web-security/sql-injection/lab-login-bypass)
+
+**Description:** Exploit the vulnerable login function to access the application as the administrator.
+
 **Goal:** Log in as the `administrator` user.
 
 **Vulnerable parameter:** `username` in login form.
