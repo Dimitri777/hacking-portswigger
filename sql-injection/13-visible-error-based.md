@@ -6,16 +6,10 @@
 
 **Goal:** Extract the administrator password using visible error messages.
 
-## Technique
+## Official solution summary
 
-Force the database to throw an error that includes the data you want (e.g. via CAST, CONVERT, or XML functions that leak data in the error message).
+The tracking cookie reaches a query whose verbose database errors are visible in the response. The official solution uses the error behavior to disclose query results, obtains the administrator's password, and verifies it by logging in through the lab interface.
 
-## Common Payload (Microsoft SQL Server style often)
+## Defensive takeaways
 
-```
-' AND 1=CAST((SELECT password FROM users WHERE username='administrator') AS int)--
-```
-
-The error message will contain the password.
-
-For other databases, use similar type conversion errors or EXTRACTVALUE that leaks data.
+Use parameterized queries, suppress internal database details in client-facing errors, and ensure failures do not include query values or result data. Log diagnostic details securely on the server.

