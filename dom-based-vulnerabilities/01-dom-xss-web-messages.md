@@ -1,6 +1,9 @@
 # Lab: DOM XSS using web messages (Practitioner)
 
-**Goal:** Use the exploit server to post a message that causes `print()` to be called.
+**Lab:** [https://portswigger.net/web-security/dom-based/controlling-the-web-message-source/lab-dom-xss-using-web-messages](https://portswigger.net/web-security/dom-based/controlling-the-web-message-source/lab-dom-xss-using-web-messages)
+
+**Task (from PortSwigger):**  
+This lab demonstrates a simple web message vulnerability. To solve this lab, use the exploit server to post a message to the target site that causes the `print()` function to be called.
 
 ## Vulnerability
 The home page registers an `addEventListener` for web messages and inserts the message content into a `div` with `innerHTML` (no origin check).
