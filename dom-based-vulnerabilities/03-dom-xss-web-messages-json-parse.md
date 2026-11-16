@@ -1,6 +1,9 @@
 # Lab: DOM XSS using web messages and JSON.parse (Practitioner)
 
-**Goal:** Call `print()` by sending a crafted JSON web message.
+**Lab:** [https://portswigger.net/web-security/dom-based/controlling-the-web-message-source/lab-dom-xss-using-web-messages-and-json-parse](https://portswigger.net/web-security/dom-based/controlling-the-web-message-source/lab-dom-xss-using-web-messages-and-json-parse)
+
+**Task (from PortSwigger):**  
+This lab uses web messaging and parses the message as JSON. To solve the lab, construct an HTML page on the exploit server that exploits this vulnerability and calls the `print()` function.
 
 ## Vulnerability
 Messages are parsed with `JSON.parse()`. For `type: "load-channel"` the `url` property is assigned to an iframe `src` with no sanitization.

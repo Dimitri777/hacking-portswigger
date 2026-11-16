@@ -1,6 +1,11 @@
 # Lab: Clobbering DOM attributes to bypass HTML filters (Expert)
 
-**Goal:** Bypass HTMLJanitor via DOM clobbering and call `print()`. Use Chrome.
+**Lab:** [https://portswigger.net/web-security/dom-based/dom-clobbering/lab-dom-clobbering-attributes-to-bypass-html-filters](https://portswigger.net/web-security/dom-based/dom-clobbering/lab-dom-clobbering-attributes-to-bypass-html-filters)
+
+**Task (from PortSwigger):**  
+This lab uses the HTMLJanitor library, which is vulnerable to DOM clobbering. To solve this lab, construct a vector that bypasses the filter and uses DOM clobbering to inject a vector that calls the `print()` function. You may need to use the exploit server in order to make your vector auto-execute in the victim's browser.
+
+**Note:** The intended solution to this lab will not work in Firefox. We recommend using Chrome to complete this lab.
 
 ## Vulnerability
 The filter walks `element.attributes`. Clobbering `attributes` with an `<input id=attributes>` makes `.length` undefined so blacklisted attributes (e.g. `onfocus`) are not stripped.

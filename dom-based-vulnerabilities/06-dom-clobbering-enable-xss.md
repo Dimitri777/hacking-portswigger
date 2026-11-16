@@ -1,6 +1,11 @@
 # Lab: Exploiting DOM clobbering to enable XSS (Expert)
 
-**Goal:** Clobber a variable and trigger XSS (`alert(1)`). Chrome only for the intended solution.
+**Lab:** [https://portswigger.net/web-security/dom-based/dom-clobbering/lab-dom-xss-exploiting-dom-clobbering](https://portswigger.net/web-security/dom-based/dom-clobbering/lab-dom-xss-exploiting-dom-clobbering)
+
+**Task (from PortSwigger):**  
+This lab contains a DOM-clobbering vulnerability. The comment functionality allows "safe" HTML. To solve this lab, construct an HTML injection that clobbers a variable and uses XSS to call the `alert()` function.
+
+**Note:** The intended solution to this lab will only work in Chrome.
 
 ## Vulnerability
 Blog comments load `loadCommentsWithDomClobbering.js`:

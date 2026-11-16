@@ -1,6 +1,9 @@
 # Lab: DOM-based cookie manipulation (Practitioner)
 
-**Goal:** Inject a cookie that causes XSS on another page and call `print()`.
+**Lab:** [https://portswigger.net/web-security/dom-based/cookie-manipulation/lab-dom-cookie-manipulation](https://portswigger.net/web-security/dom-based/cookie-manipulation/lab-dom-cookie-manipulation)
+
+**Task (from PortSwigger):**  
+This lab demonstrates DOM-based client-side cookie manipulation. To solve this lab, inject a cookie that will cause XSS on a different page and call the `print()` function. You will need to use the exploit server to direct the victim to the correct pages.
 
 ## Vulnerability
 The site sets a client-side cookie `lastViewedProduct` to the last product URL. That value is later written into the DOM unsafely on the home page.
